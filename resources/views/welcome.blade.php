@@ -25,7 +25,7 @@
                         class="md:flex hidden mx-3 md:mx-10 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         type="button">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg">
+                        <img class="w-8 h-8 rounded-full" src="{{ asset('src/profile/user.png') }}">
                     </button>
 
                     <!-- Dropdown menu -->
@@ -57,8 +57,8 @@
                         </div>
                     </div>
 
-                    <a href="#" id="_logo" class="flex items-center">
-                        <img src="{{ asset('icon/open-book.png') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                    <a href="{{ url('/') }}" id="_logo" class="flex items-center">
+                        <img src="{{ asset('src/icon/open-book.png') }}" class="h-6 mr-3 sm:h-9" alt="Logo" />
                         <span
                             class="self-center text-xl text-teal-600 font-semibold whitespace-nowrap dark:text-white">Calonbuku</span>
                     </a>
@@ -262,19 +262,24 @@
                             placeholder="Cari buku" required>
                     </div>
                 </form>
-                <button class="inline-flex order-1"><img src="{{ asset('icon/carts.png') }}" class="h-6 mr-3 sm:h-9"
-                        alt="Flowbite Logo" /></button>
+                <button class="inline-flex order-1"><img src="{{ asset('src/icon/carts.png') }}" class="h-6 mr-3 sm:h-9"
+                        alt="Logo" /></button>
             </div>
         </nav>
     </div>
     <div id="_main" class="_main w-full lg:w-[1140px] mx-auto">
         <div id="_hero_section" class="_hero_section py-7 px-10 swiper mySwiper">
             <div class="swiper-wrapper">
-                <img src="{{ asset('dummy/1.jpg') }}" alt="{{ asset('dummy/1.jpg') }}" class="rounded-md swiper-slide">
-                <img src="{{ asset('dummy/2.jpg') }}" alt="{{ asset('dummy/1.jpg') }}" class="rounded-md swiper-slide">
-                <img src="{{ asset('dummy/3.jpg') }}" alt="{{ asset('dummy/1.jpg') }}" class="rounded-md swiper-slide">
-                <img src="{{ asset('dummy/4.jpg') }}" alt="{{ asset('dummy/1.jpg') }}" class="rounded-md swiper-slide">
-                <img src="{{ asset('dummy/5.jpg') }}" alt="{{ asset('dummy/1.jpg') }}" class="rounded-md swiper-slide">
+                <img src="{{ asset('src/dummy/1.jpg') }}" alt="{{ asset('src/dummy/1.jpg') }}"
+                    class="rounded-md swiper-slide">
+                <img src="{{ asset('src/dummy/2.jpg') }}" alt="{{ asset('src/dummy/1.jpg') }}"
+                    class="rounded-md swiper-slide">
+                <img src="{{ asset('src/dummy/3.jpg') }}" alt="{{ asset('src/dummy/1.jpg') }}"
+                    class="rounded-md swiper-slide">
+                <img src="{{ asset('src/dummy/4.jpg') }}" alt="{{ asset('src/dummy/1.jpg') }}"
+                    class="rounded-md swiper-slide">
+                <img src="{{ asset('src/dummy/5.jpg') }}" alt="{{ asset('src/dummy/1.jpg') }}"
+                    class="rounded-md swiper-slide">
             </div>
             {{-- <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div> --}}
@@ -282,35 +287,35 @@
         </div>
         <div id="_category" class="grid grid-cols-4 lg:grid-cols-8 gap-8 md:gap-14 py-10 mx-5">
             <a href="#" class="_card inline-block text-center">
-                <img src="{{ asset('icon/book.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a href="#" class="_card inline-block text-center">
-                <img src="{{ asset('icon/book-1.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book-1.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a href="#" class="_card inline-block text-center">
-                <img src="{{ asset('icon/book-2.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book-2.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a href="#" class="_card inline-block text-center">
-                <img src="{{ asset('icon/science-book.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/science-book.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a class="_card inline-block text-center">
-                <img src="{{ asset('icon/book.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a class="_card inline-block text-center">
-                <img src="{{ asset('icon/book-1.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book-1.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a class="_card inline-block text-center">
-                <img src="{{ asset('icon/book-2.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/book-2.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
             <a class="_card inline-block text-center">
-                <img src="{{ asset('icon/science-book.png') }}" alt="imagess">
+                <img src="{{ asset('src/icon/science-book.png') }}" alt="imagess">
                 <p class="font-semibold text-xs md:text-lg">Buku baru andalan</p>
             </a>
         </div>
@@ -322,37 +327,37 @@
             </div>
             <div id="_list_rekomendasi" class="py-6 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku1.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku1.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </a>
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku2.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku2.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </a>
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku3.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku3.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </a>
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku4.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku4.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </a>
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku5.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku5.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </a>
                 <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku6.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku6.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
@@ -367,37 +372,37 @@
             </div>
             <div id="_list_rekomendasi" class="py-10 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
                 <div id="_card_populer" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku7.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku7.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </div>
                 <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku5.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku5.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </div>
                 <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku6.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku6.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </div>
                 <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku4.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku4.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </div>
                 <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku5.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku5.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
                 </div>
                 <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-                    <img src="{{ asset('dummy/buku6.jpg') }}" alt="poto">
+                    <img src="{{ asset('src/dummy/buku6.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
@@ -431,7 +436,7 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="https://flowbite.com/" class="flex items-center">
-                        <img src="{{ asset('icon/open-book.png') }}" class="mr-3 h-8" alt="FlowBite Logo" />
+                        <img src="{{ asset('src/icon/open-book.png') }}" class="mr-3 h-8" alt="FlowBite Logo" />
                         <span
                             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Calonbuku</span>
                     </a>
