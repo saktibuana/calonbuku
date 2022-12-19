@@ -13,19 +13,56 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <!-- Styles -->
     @vite('resources/css/app.css')
-    <!-- Demo styles -->
-    <link rel="stylesheet" href="{{ asset('build/style.css') }}">
 </head>
 
 <body class="bg-abu_muda">
     <div id="_navbar" class="bg-white shadow-md">
         <nav class="w-full xl:w-[1140px] mx-auto border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
-                <a href="#" id="_logo" class="flex items-center order-2 md:order-3">
-                    <img src="{{ asset('icon/open-book.png') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-                    <span
-                        class="self-center text-xl text-teal-600 font-semibold whitespace-nowrap dark:text-white">Calonbuku</span>
-                </a>
+                <div class="order-2 md:order-3 flex justify-between">
+
+                    <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
+                        class="md:flex hidden mx-3 md:mx-10 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        type="button">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg">
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar"
+                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
+                            <div>Bonnie Green</div>
+                            <div class="font-medium truncate">name@flowbite.com</div>
+                        </div>
+                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                        </ul>
+                        <div class="py-1">
+                            <a href="#"
+                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                out</a>
+                        </div>
+                    </div>
+
+                    <a href="#" id="_logo" class="flex items-center">
+                        <img src="{{ asset('icon/open-book.png') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                        <span
+                            class="self-center text-xl text-teal-600 font-semibold whitespace-nowrap dark:text-white">Calonbuku</span>
+                    </a>
+                </div>
                 <button id="btn-menu" type="button"
                     class="inline-flex items-center order-3 p-2 ml-3 text-sm text-teal-600 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-default" aria-expanded="false">
@@ -488,7 +525,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     {{-- Script --}}
-    <script src="{{ asset('build/component.js') }}"></script>
+    <script src="{{ asset('src/script.js') }}"></script>
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
