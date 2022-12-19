@@ -17,7 +17,8 @@ module.exports = {
             colors:{
                 abu_muda:'#f9fbfe',
                 kuning_langsat:'#ffeab6',
-                merah_muda:'#ff4c5e'
+                merah_muda:'#ff4c5e',
+                biru_langit:'#30c8d6'
             }
         },
     },
