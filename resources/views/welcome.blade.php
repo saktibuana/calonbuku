@@ -21,7 +21,7 @@
     <div id="_navbar" class="bg-white shadow-md">
         <nav class="w-full xl:w-[1140px] mx-auto border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
-                <a href="#" class="flex items-center order-2 md:order-3">
+                <a href="#" id="_logo" class="flex items-center order-2 md:order-3">
                     <img src="{{ asset('icon/open-book.png') }}" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
                     <span
                         class="self-center text-xl text-teal-600 font-semibold whitespace-nowrap dark:text-white">Calonbuku</span>
@@ -183,6 +183,33 @@
                     </aside>
                 </div>
                 <form class="flex items-center order-4 md:order-2 w-full md:w-1/2 my-3">
+                    <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+                        class="text-blue-500 text-sm px-4 py-2.5 text-center hidden md:inline-flex items-center font-bold"
+                        type="button">Kategori<i class="bi bi-chevron-down ml-4 font-bold"></i></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown"
+                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+
                     <label for="simple-search" class="sr-only">Search</label>
                     <div class="relative w-full">
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -256,43 +283,43 @@
                 <h1 class="md:text-3xl font-semibold">Rekomendasi untukmu</h1>
                 <a href="#" class="text-xl text-blue-500 font-semibold">Lihat Semua</a>
             </div>
-            <div id="_list_rekomendasi" class="py-10 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+            <div id="_list_rekomendasi" class="py-6 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku1.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+                </a>
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku2.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+                </a>
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku3.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+                </a>
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku4.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+                </a>
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku5.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
-                <div id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+                </a>
+                <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
                     <img src="{{ asset('dummy/buku6.jpg') }}" alt="poto">
                     <p id="_author" class="text-xs">Gege Akutami</p>
                     <p id="_title" class="text-md">Melangkah</p>
                     <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-                </div>
+                </a>
             </div>
         </div>
         <hr class="my-3">
@@ -345,7 +372,7 @@
     <div id="_email" class="bg-blue-300">
         <div class="w-full lg:w-[1140px] mx-auto py-10">
             <label for="email-address-icon"
-                class="block mb-4 text-3xl text-center font-medium text-gray-900 dark:text-white">Kejutan spesial dari
+                class="block mb-4 text-3xl text-center font-bold text-gray-900 dark:text-white">Kejutan spesial dari
                 kami untuk
                 kamu</label>
             <div class="flex justify-center">
