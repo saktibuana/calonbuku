@@ -22,10 +22,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Role::class);
     }
 
+
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
         'password',
+        'age',
+        'gender',
+        'contact_number',
+        'address'
     ];
 
     /**
@@ -47,7 +53,4 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public static function findOrFail($id){
-
-    }
 }

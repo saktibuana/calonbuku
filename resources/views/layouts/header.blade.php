@@ -220,17 +220,26 @@
                     </div>
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                         aria-labelledby="dropdownUserAvatarButton">
+                        @if (!Auth::user()->email_verified_at)
                         <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            <a href="verify-email"
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-blue-500 dark:hover:text-white">Verifikasi
+                                Email</a>
+                        </li>
+                        @endif
+                        <li>
+                            <a href="{{ route('account.index') }}"
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun
+                                saya</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pesanan
+                                saya</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Whishlist</a>
                         </li>
                     </ul>
                     <div class="py-1">
@@ -244,11 +253,14 @@
                 </div>
                 @else
                 <a href="{{ route('login') }}"
-                    class="md:flex hidden mx-3 md:mx-10 text-lg font-bold align-middle text-blue-500"
-                    type="button">Masuk
+                    class="md:flex hidden mx-3 md:mx-3 text-lg font-bold align-middle text-blue-500" type="button">Masuk
+                </a>
+                <a href="{{ route('register') }}"
+                    class="md:flex hidden mx-3 md:mx-3 text-lg font-bold align-middle text-blue-500"
+                    type="button">Daftar
                 </a>
                 @endif
-                <button class="inline-flex"><img src="{{ asset('src/icon/carts.png') }}" class="h-6 mr-3 sm:h-9"
+                <button class="inline-flex"><img src="{{ asset('src/icon/carts.png') }}" class="h-6 mx-3 sm:h-9"
                         alt="Logo" /></button>
             </div>
         </div>
