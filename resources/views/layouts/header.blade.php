@@ -206,6 +206,8 @@
             </form>
             <div id="_btn_user_carts" class="order-1 md:order-3 flex">
                 @if (Auth::check())
+                <button class="hidden md:inline-flex"><img src="{{ asset('src/icon/store.png') }}"
+                        class="h-6 mx-3 sm:h-9" alt="Cart" /></button>
                 <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
                     class="md:flex hidden mx-3 md:mx-10 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                     type="button">
@@ -260,8 +262,8 @@
                     type="button">Daftar
                 </a>
                 @endif
-                <button class="inline-flex"><img src="{{ asset('src/icon/carts.png') }}" class="h-6 mx-3 sm:h-9"
-                        alt="Logo" /></button>
+                <button class="inline-flex"><img src="{{ asset('src/icon/shopping-cart.png') }}" class="h-6 mx-3 sm:h-9"
+                        alt="Cart" /></button>
             </div>
         </div>
     </nav>
