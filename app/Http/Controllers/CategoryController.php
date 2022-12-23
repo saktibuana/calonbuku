@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Categories;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
 
-class ProfileController extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.index',['title'=>'Profile']);
+        return view('category.index',['title'=>'Category']);
     }
 
     /**
@@ -36,8 +38,21 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validasi = Validator::make($request->all(),[
+            'name'=>'required',
+            'description'=>'required'
+        ],[
+            'name.required'=>'Name tidak boleh kosong',
+            'description.required'=>'Deskripsi tidak boleh kosong'
+        ]);
 
+        if ($validasi->fails()) {
+            return response()->json(['errors'=>$validasi->errors()]);
+        } else {
+            Categories::create($request->all());
+            return response()->json(['success'=>'Data berhasil ditambahkan']);
+        }
+        
     }
 
     /**
@@ -71,20 +86,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name'=>'required|max:255',
-            'age'=>'required|numeric',
-            'gender'=>'required|max:255',
-            'contact_number'=>'required|numeric',
-            'address'=>'required'
-        ]);
-        $user = User::findOrFail($id);
-        $user->name=$request->name;
-        $user->age=$request->age;
-        $user->gender=$request->gender;
-        $user->contact_number = $request->contact_number;
-        $user->address=$request->address;
-        $user->save();
+        //
     }
 
     /**

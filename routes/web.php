@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,15 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['title'=>'Calonbuku']);
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard',['title'=>'Dashboard']);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('account',ProfileController::class);
+    Route::resource('category',CategoryController::class);
+    Route::post('postAjax',[CategoryController::class,'store']);
 });
 
 require __DIR__.'/auth.php';
