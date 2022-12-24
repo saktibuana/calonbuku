@@ -12,7 +12,8 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <!-- Styles -->
-    @vite('resources/css/app.css')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 
 <body class="bg-abu_muda">
@@ -131,14 +132,15 @@
         </div>
     </footer>
     {{-- file Javascript --}}
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    {{-- Script --}}
+    <script src="{{ asset('src/js/index.js') }}"></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
-        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    {{-- Script --}}
-    <script src="{{ asset('src/script.js') }}"></script>
+
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {

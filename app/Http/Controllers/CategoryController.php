@@ -39,10 +39,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validasi = Validator::make($request->all(),[
-            'name'=>'required',
+            'name'=>'required|unique:categories',
             'description'=>'required'
         ],[
             'name.required'=>'Name tidak boleh kosong',
+            'name.unique'=>'Data sudah tersedia',
             'description.required'=>'Deskripsi tidak boleh kosong'
         ]);
 
@@ -50,9 +51,8 @@ class CategoryController extends Controller
             return response()->json(['errors'=>$validasi->errors()]);
         } else {
             Categories::create($request->all());
-            return response()->json(['success'=>'Data berhasil ditambahkan']);
+            return response()->json(['success'=>'Data saved successfully']);
         }
-        
     }
 
     /**

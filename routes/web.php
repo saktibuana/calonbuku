@@ -26,7 +26,6 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('account',ProfileController::class);
     Route::resource('category',CategoryController::class);
-    Route::post('postAjax',[CategoryController::class,'store']);
 });
 
 require __DIR__.'/auth.php';
