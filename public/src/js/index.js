@@ -47,8 +47,6 @@ $(document).ready(function () {
                     $('#notif').html(`<h1>${result.description}</h1>`)
                 }
                 if(response.success){
-                    $('#category-name').val('')
-                    $('#category-description').val('')
                     modal.hide()
                     const Toast = Swal.mixin({
                         toast: true,
@@ -66,6 +64,7 @@ $(document).ready(function () {
                         icon: 'success',
                         title: response.success
                       })
+                      location.reload()
                 }
             }, error: function(xhr, throwError) {
                 alert(xhr.status + "\n" + xhr.responseText + "\n" + throwError);
