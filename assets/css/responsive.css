@@ -1,6 +1,7 @@
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
+@media (max-width: 768px) {
+    .header     {
+        min-width: 768px;
     }
-  }
+
+}
   
