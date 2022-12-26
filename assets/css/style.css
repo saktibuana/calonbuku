@@ -110,11 +110,16 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    cursor: pointer;
+    z-index: 9999;
 }
 
 .item-header-2 .wrap-search .wrap-icon-search .img-search:hover   {
-    background-color: ;
+    background-color: #919192;
+    
 }
+
+
 
 .item-header-2 .wrap-img-shop  {
     position: relative;
@@ -169,16 +174,15 @@
     cursor: pointer;
 }
 
- .menu-bar  {
+.item-header-2 .wrap-img-loc    {
+    position: fixed;
     display: flex;
-    right: 35px;
-    top: 91px;
-    background-color: #ffffff;
-    -webkit-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.1);
-    box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.1);
-    padding: 10px 30px;
-    border-radius: 12px;
-    width: 25%;
-} 
+    top: 75px;
+    right: 60px;
+    cursor: pointer;
+    align-items: center;
+}
 
+.item-header-2 .wrap-img-loc .bi-geo-alt   {
+    width: 12px;
+}
