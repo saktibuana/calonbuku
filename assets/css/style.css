@@ -154,7 +154,7 @@
 }
 
 .recomendation  {
-    position: fixed;
+    position: absolute;
     left: 232px;
     top: 80px;
     width: 45%;
@@ -175,7 +175,7 @@
 }
 
 .item-header-2 .wrap-img-loc    {
-    position: fixed;
+    position: absolute;
     display: flex;
     top: 75px;
     right: 60px;
@@ -187,6 +187,12 @@
     width: 12px;
 }
 
+/* Main */
+
+main    {
+    width: 980px;
+    margin: auto;
+}
 
 /* Carousel-Slideshow*/
 
@@ -210,5 +216,17 @@
 
 .carousel-indicators  button {
    
+}
+
+.user-category  {
+    position: relative;
+    z-index: 99999;
+    top: 150px;
+    border-radius: 10px;
+}
+
+.user-category h2  {
+    font-size: 21px;
+    color: rgba(49, 53, 59, 0.96);;
 }
 
