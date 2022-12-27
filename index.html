@@ -14,6 +14,8 @@
     <!-- CSS -->
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/responsive.css" rel="stylesheet">
+    <!-- Open Sauce One -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/open-sauce-one" type="text/css"/>
   </head>
   <body>
     <!-- Navbar -->
@@ -50,7 +52,7 @@
                 </div>
               </div>
 
-              <div class="wrap-img-shop mx-3">
+              <div class="wrap-img-shop mx-3" onclick="on()">
                 <img class="img-shop" src="/assets/img/4.png" alt="">
               </div>
 
@@ -102,7 +104,11 @@
       </div>
 
 
-
+      <div class="menu-bar d-flex flex-column justify-content-between align-items-center shadow-sm p-3 mb-5 bg-body rounded " id="menuBar">
+        <img src="/assets/img/5.png" alt="">
+        <h4 class="mt-2">Wah keranjang belanjaanmu kosong!</h4>
+        <p class="text-center">Daripada dianggurin, isi saja dengan barang-barang menarik. <br>Lihat-lihat dulu, siapa tahu ada yang kamu suka!</p>
+      </div>
   </div>
 
   <!-- Body -->
@@ -116,7 +122,7 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <!-- Slide-Show -->
-          <div class="carousel-inner">
+          <div class="carousel-inner ">
             <div class="carousel-item active">
               <img src="/assets/img/slide/1.jpg" class="d-block w-100" alt="...">
             </div>
@@ -138,23 +144,23 @@
           </div>
         </div>
 
-        <div class="user-category shadow p-3 mb-5 bg-body rounded">
+        <div class="user-category shadow p-3 mb-5 bg-body rounded ">
             <div class="mx-0 p-0">
               <div class="col-6 my-2">
-                  <h2 class="fw-bold">Kategori Pilihan</h2>
-                  <div id="carouselExampleControls" class="carousel2 slide " data-bs-ride="carousel">
+                  <h2 class="fw-bolder">Kategori Pilihan</h2>
+                  <div id="carouselExampleControls" class="carousel2 slide row align-items-start" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item border-carousel active ">
-                        <img src="/assets/img/slide/user-category/1.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/2.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/3.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/4.jpg" class="d-block w-25" alt="...">
+                        <img src="/assets/img/slide/user-category/1.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/2.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/3.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/4.jpg" class="d-block w-25 my-3" alt="...">
                       </div>
                       <div class="carousel-item border-carousel">
-                        <img src="/assets/img/slide/user-category/5.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/6.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/7.jpg" class="d-block w-25" alt="...">
-                        <img src="/assets/img/slide/user-category/8.jpg" class="d-block w-25" alt="...">
+                        <img src="/assets/img/slide/user-category/5.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/6.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/7.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/8.jpg" class="d-block w-25 my-3" alt="...">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -169,8 +175,12 @@
               </div>
             </div>
         </div>
-  </main>
 
+      
+  </main>
+    <!-- Java Script -->
+    <script src="/assets/js/script.js"></script>
+    <!-- Bootstrap CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
