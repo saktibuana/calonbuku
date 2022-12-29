@@ -1,8 +1,20 @@
+// shopping cart popup
+
 function on() {
-    var menunBar = document.getElementById("menuBar");
+    const menuBar = document.getElementById("menuBar");
   
-    var overlay = document.getElementById("overlay");
+    const overlay = document.getElementById("overlay");
   
-    menunBar.classList.toggle("menuBarStyle");
+    
+    menuBar.classList.toggle("menuBarStyle");
     overlay.classList.toggle("overlayStyle");
+    
+  }
+
+
+// qr code popup
+  function qrcode() {
+    const qrcode = document.getElementById("qrCode")
+    
+    qrcode.classList.toggle("qrCodeStyle")
   }

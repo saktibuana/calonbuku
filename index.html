@@ -25,7 +25,7 @@
           <div class="item-header-1 d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <img class="mx-2" src="/assets/img/1.png" alt="phone">
-                <span>Download Tokopedia App</span>
+                <span onclick="qrcode()"> Download Tokopedia App</span>
               
           </div>
           
@@ -102,27 +102,43 @@
           </div>
         </div>
       </div>
+      
+      <!-- qr-code -->
+      <div class="qr-code-popup" id="qrCode">
+        <div class="mx-3">
+          <img class="qr-code" src="/assets/img/qr-tokopedia.png" alt="qr-code">
+        </div>
+        <div class="d-flex flex-column ">
+          <p>Scan this QR or download <br> app from:</p>
+          <img src="/assets/img/22.png" alt="android" class="w-50 download-on">
+          <img src="/assets/img/23.png" alt="ios" class="w-50 download-on">
+        </div>
+      </div>
 
-
+      <!-- Menu-Bar -->
       <div class="menu-bar d-flex flex-column justify-content-between align-items-center shadow-sm p-3 mb-5 bg-body rounded " id="menuBar">
         <img src="/assets/img/5.png" alt="">
         <h4 class="mt-2">Wah keranjang belanjaanmu kosong!</h4>
         <p class="text-center">Daripada dianggurin, isi saja dengan barang-barang menarik. <br>Lihat-lihat dulu, siapa tahu ada yang kamu suka!</p>
       </div>
-  </div>
+      </div>
+
+      <div>
+        <img src="/assets/img/gif/floating-50KB1.gif" alt="" style="" class="gif-promo-tokopedia">
+      </div>
 
   <!-- Body -->
   
   
   <main class="content">
         <div id="carouselExampleIndicators" class="carousel slide d-flex flex-column align-items-center" data-bs-ride="true">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
+          <ol class="carousel-indicators">
+            <li type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+            <li type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></li>
+            <li type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></li>
+        </ol>
           <!-- Slide-Show -->
-          <div class="carousel-inner ">
+          <div class="carousel-inner  rounded">
             <div class="carousel-item active">
               <img src="/assets/img/slide/1.jpg" class="d-block w-100" alt="...">
             </div>
@@ -143,35 +159,55 @@
           </button>
           </div>
         </div>
-
-        <div class="user-category shadow p-3 mb-5 bg-body rounded ">
-            <div class="mx-0 p-0">
-              <div class="col-6 my-2">
-                  <h2 class="fw-bolder">Kategori Pilihan</h2>
-                  <div id="carouselExampleControls" class="carousel2 slide row align-items-start" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+  <!-- User-Category -->
+        <div class="user-category shadow-sm p-3 mb-5 bg-body rounded ">
+            <div class="d-flex mx-0 p-0">
+              <div class="gallery-slide-show col-6">
+                  <span class="fw-bolder">Kategori Pilihan</span>
+                  <div id="carouselExampleControls" class="carousel2 slide" data-bs-ride="carousel">
+                    <div class="carousel-inner d-flex mt-2">
                       <div class="carousel-item border-carousel active ">
-                        <img src="/assets/img/slide/user-category/1.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/2.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/3.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/4.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/1.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/2.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/3.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/4.jpg" class="mx-1" alt="...">
                       </div>
                       <div class="carousel-item border-carousel">
-                        <img src="/assets/img/slide/user-category/5.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/6.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/7.jpg" class="d-block w-25 my-3" alt="...">
-                        <img src="/assets/img/slide/user-category/8.jpg" class="d-block w-25 my-3" alt="...">
+                        <img src="/assets/img/slide/user-category/5.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/6.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/7.jpg" class="mx-1" alt="...">
+                        <img src="/assets/img/slide/user-category/8.jpg" class="mx-1" alt="...">
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
                   </div>
+              </div>
+
+              <!-- topup-dan-tagihan -->
+
+                <div class="topup-tagihan d-flex col-6 justify-content-between flex-column">
+                   <div class="d-flex flex-row"> 
+                      <div class="">
+                        <span class="fw-bolder">Top Up & Tagihan</span>
+                      </div>
+                      <div class="see-all mx-1 fw-bold">
+                        <span>Lihat Semua</span>
+                      </div>
+                   </div>
+
+                <div>  
+                  <div class="top-up d-flex flex-row">
+                    <div class="navbar-topup d-flex ">
+                      <span class="navbar-topup-button">Pulsa</span>
+                      <span class="navbar-topup-button">Paket Data</span>
+                      <span class="navbar-topup-button">Flight</span>
+                      <span class="navbar-topup-button">Listrik PLN</span>
+                    </div>
+                    <div class="etc-button">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
         </div>

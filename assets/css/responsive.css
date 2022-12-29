@@ -1,3 +1,14 @@
+@media (max-width: 1280px) {
+    main     {
+        width: 980px;
+    }
+
+    .border-carousel img   {
+        width: 100px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .header .item-header-2 .wrap-img-loc     {
         display: none;
