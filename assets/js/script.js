@@ -1,23 +1,24 @@
 // shopping cart popup
-
 function on() {
-    const menuBar = document.getElementById("menuBar");
-  
+    const menuBar = document.getElementById("menuBar");  
     const overlay = document.getElementById("overlay");
     const transparrentBlack = document.getElementById("transparrentBlack");
     
-    console.log(transparrentBlack);
+    if(menuBar){
+      menuBar.classList.toggle("menuBarStyle");    
+    }
 
-    menuBar.classList.toggle("menuBarStyle");
-    overlay.classList.toggle("overlayStyle");
-    transparrentBlack.classList.toggle("blockStyle");
-    
+    if(overlay){
+      overlay.classList.toggle("overlayStyle");
+    }
+
+    if(transparrentBlack){
+      transparrentBlack.classList.toggle("blockStyle");
+    }    
   }
-
 
 // qr code popup
-  function qrcode() {
-    const qrcode = document.getElementById("qrCode")
-    
+function qrcode() {
+    const qrcode = document.getElementById("qrCode")  
     qrcode.classList.toggle("qrCodeStyle")
-  }
+}
