@@ -19,9 +19,9 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .header     {
-        min-width: 768px;
+        min-width: 780px;
     }
 
 }

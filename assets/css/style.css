@@ -9,7 +9,7 @@ body    {
 /*item-header-1*/
 .header {
     position: absolute;
-    z-index: 99999;
+    z-index: 9999999;
     width: 100%;
 }
 
@@ -25,7 +25,7 @@ body    {
 
 .header .item-header-1 span {
     color: #929292;
-    font-size: px;
+    font-size: 12px;
 }
 
 .header .item-header-1 span:hover   {
@@ -147,6 +147,7 @@ body    {
     color: #cdcdcd;
     margin-bottom:8px ;
     font-weight: 100;
+    
 }
 .header .btn    {
     border-radius: 8px;
@@ -227,6 +228,7 @@ body    {
     -webkit-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.1);
     visibility: hidden;
+    z-index: 9999999;
 }
 
 .menuBarStyle   {
@@ -248,6 +250,22 @@ body    {
     color: #31353bad;
 }
 
+.transparent-black  {
+    background-color: rgba(0, 0,0,0.5);
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    visibility: hidden;
+}
+
+.blockStyle {
+    visibility: visible;
+}
+
 .item-header-2 .wrap-img-loc    {
     position: absolute;
     display: flex;
@@ -258,7 +276,17 @@ body    {
 }
 
 .item-header-2 .wrap-img-loc .bi-geo-alt   {
-    width: 12px;
+    font-size: 11px;
+}
+
+.wrap-img-loc  .text-location   {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%
 }
 
 
@@ -309,11 +337,19 @@ main    {
     border: 1px solid #e5e7e9;
     border-radius: 10px;
     width: 120px;
+    cursor: pointer;
 }
 
 .see-all span   {
-    font-size: 16px;
+    font-size: 14px;
     color: #03ac0e;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%
 }
 
 .see-all span:hover   {
@@ -328,12 +364,45 @@ main    {
 }
 
 .navbar-topup .navbar-topup-button  {
-    padding: 0px 24px;
+    padding: 8px 24px;
     font-weight: 600;
     cursor: pointer;
     color: #a5a6a9;
     font-size: 14px;
-    height: 40px;
     justify-content: center;
     align-items: center;
+}
+
+.etc-button i {
+    border-left: 1px solid inherit;
+}
+
+.etc-button i   {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%
+}
+
+.carousel-indicators [data-bs-target] {
+    /* box-sizing: content-box; */
+    flex: 0 1 auto;
+    width: 10px; /* change width */
+    height: 10px; /* change height */
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    /* background-color: #fff; */
+    /* background-clip: padding-box; */
+    border: 0;
+    /* border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; */
+    opacity: .5;
+    /* transition: opacity .6s ease; */
+    border-radius: 100%; // /* add border-radius */
 }
