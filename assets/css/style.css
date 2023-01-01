@@ -296,6 +296,7 @@ body    {
     bottom: 90px; 
     width: 100px; 
     display: block;
+    z-index: 99999;
 }
 
 /* Main */
@@ -318,6 +319,26 @@ main    {
 .carousel-indicators    {
     justify-content: left;
     margin-left: 3%;
+}
+
+.carousel-indicators [data-bs-target] {
+    /* box-sizing: content-box; */
+    flex: 0 1 auto;
+    width: 10px; /* change width */
+    height: 10px; /* change height */
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    /* background-color: #fff; */
+    /* background-clip: padding-box; */
+    border: 0;
+    /* border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; */
+    opacity: .5;
+    /* transition: opacity .6s ease; */
+    border-radius: 100%; // /* add border-radius */
 }
 
 .user-category  {
@@ -358,9 +379,10 @@ main    {
 }
 
 .top-up {
+    position: relative;
     border: 1px solid #e5e7e9;
     border-radius: 10px;
-    margin-top: -99px;
+    top: 10px;
 }
 
 .navbar-topup .navbar-topup-button  {
@@ -387,22 +409,49 @@ main    {
     width: 100%
 }
 
-.carousel-indicators [data-bs-target] {
-    /* box-sizing: content-box; */
-    flex: 0 1 auto;
-    width: 10px; /* change width */
-    height: 10px; /* change height */
-    padding: 0;
-    margin-right: 3px;
-    margin-left: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    /* background-color: #fff; */
-    /* background-clip: padding-box; */
-    border: 0;
-    /* border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; */
-    opacity: .5;
-    /* transition: opacity .6s ease; */
-    border-radius: 100%; // /* add border-radius */
+.nomor-telepon  {
+    position: relative;
+    display: flex;
+    flex: 1 1 0px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-width: 0px;
+    
+}
+
+.top-up-content label  {
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgba(49, 53, 59, 0.68);
+    font-family: inherit;
+}
+
+.nomor-telepon .form-control    {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    color: var(--color-text-high,rgba(49,53,59,0.96));
+    font-family: inherit;
+    background-color: transparent;
+    line-height: 20px;
+    outline: none;
+    height: auto;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.nomor-telepon .form-control::placeholder   {
+    color: #cdcdcd;
+    font-size: 12px;
+}
+
+.nomor-telepon .form-control:focus  {
+    box-shadow: none;
+    border: 1px solid #03ac0e;
+}
+
+.nominal button {
+    border-radius: 8px;
+    border: ;
 }
