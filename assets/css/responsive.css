@@ -6,6 +6,10 @@
     .border-carousel img   {
         width: 100px;
     }
+
+    .navbar-topup .navbar-topup.button  {
+        min-width: 1280px;
+    }
 }
 
 

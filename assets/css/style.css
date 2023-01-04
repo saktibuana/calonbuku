@@ -354,6 +354,11 @@ main    {
     margin-left: 7px;
 }
 
+.gallery-slide  {
+    height: 120px;
+    width: 480px;
+}
+
 .border-carousel img   {
     border: 1px solid #e5e7e9;
     border-radius: 10px;
@@ -416,7 +421,6 @@ main    {
     -webkit-box-pack: center;
     justify-content: center;
     min-width: 0px;
-    
 }
 
 .top-up-content label  {
@@ -453,5 +457,43 @@ main    {
 
 .nominal button {
     border-radius: 8px;
-    border: ;
+    background-color: #e5e7e9;
+    border: none;
+    height: 38px;
+}
+
+.nominal button img {
+    color: #6c727c;
+    filter: #6c727c;
+}
+
+.btn-buy button {
+    border-radius: 8px;
+    background-color: #e5e7e9;
+    border: none;
+    background-color: var(--N75,#E5E7E9);
+    border: none;
+    color: var(--N400,#6C727C);
+    cursor: not-allowed;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.857143rem;
+    height: 37px;
+    line-height: 24px;
+    outline: none;
+    position: relative;
+    padding: 0px 0px;
+    text-indent: initial;
+    transition: background-color 300ms ease 0s;
+    width: 100%;
+    font-size: 12px;
+}
+
+.carousel-recommendation .item-scroll   {
+    width: 150px;
+}
+
+.carousel-recommendation .item-scroll span  {
+    font-size: 10px;
 }
