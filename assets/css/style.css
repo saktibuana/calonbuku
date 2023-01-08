@@ -338,7 +338,7 @@ main    {
     border-bottom: 10px solid transparent; */
     opacity: .5;
     /* transition: opacity .6s ease; */
-    border-radius: 100%; // /* add border-radius */
+    border-radius: 100%;  /* add border-radius */
 }
 
 .user-category  {
@@ -366,6 +366,8 @@ main    {
     cursor: pointer;
 }
 
+/* Top-Up header */
+
 .see-all span   {
     font-size: 14px;
     color: #03ac0e;
@@ -382,6 +384,8 @@ main    {
     color: #129062;
     cursor: pointer;
 }
+
+/* Top-up content */
 
 .top-up {
     position: relative;
@@ -400,10 +404,6 @@ main    {
     align-items: center;
 }
 
-.etc-button i {
-    border-left: 1px solid inherit;
-}
-
 .etc-button i   {
     display: flex;
     -webkit-box-align: center;
@@ -411,7 +411,14 @@ main    {
     -webkit-box-pack: center;
     justify-content: center;
     height: 100%;
-    width: 100%
+    width: 100%;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.etc-button>i:active   {
+    background-color: #000 1s;
+    color: #000;
 }
 
 .nomor-telepon  {
@@ -490,10 +497,42 @@ main    {
     font-size: 12px;
 }
 
-.carousel-recommendation .item-scroll   {
+/* Carousel-Recomendation */
+
+.menu-scroll {
+    overflow-x: scroll;
+}
+
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.item-scroll {
+  border-radius: 14px;
+}
+
+
+/* .carousel-recommendation .item-scroll   {
     width: 150px;
+    border-radius: 16px;
 }
 
 .carousel-recommendation .item-scroll span  {
-    font-size: 10px;
+    font-size: 14px;
+    color: #31353bad;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
 }
+
+.carousel-recommendation .item-scroll img  {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+} */

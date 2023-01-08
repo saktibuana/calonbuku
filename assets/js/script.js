@@ -22,3 +22,4 @@ function qrcode() {
     const qrcode = document.getElementById("qrCode")  
     qrcode.classList.toggle("qrCodeStyle")
 }
+
