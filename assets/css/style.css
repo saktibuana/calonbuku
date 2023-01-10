@@ -404,6 +404,17 @@ main    {
     align-items: center;
 }
 
+.navbar-topup .navbar-topup-button:hover  {
+    color: #000;
+    transition: 0.7s;
+}
+
+.navbar-topup .navbar-topup-button:active  {
+    color: #03ac0e;
+    border-bottom: #03ac0e !important;
+    z-index: 999;
+}
+
 .etc-button i   {
     display: flex;
     -webkit-box-align: center;
@@ -501,10 +512,11 @@ main    {
 
 .menu-scroll {
     overflow-x: scroll;
+    display: inline-block;
 }
 
 .menu-scroll::-webkit-scrollbar {
-  display: none;
+  
 }
 
 .item-scroll {
