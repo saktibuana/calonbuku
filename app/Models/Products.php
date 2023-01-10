@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Products extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
     protected $table = 'products';
     protected $fillable = [
         'category_id',
@@ -15,9 +16,9 @@ class Products extends Model
         'price',
         'count',
         'description',
-        'user_id'
+        'user_id',
+        'cover'
     ];
-    public $timestamps = false;
 
     public function category(){
         return $this->hasMany(Products::class);

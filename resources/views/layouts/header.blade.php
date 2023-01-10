@@ -59,7 +59,7 @@
                                 </button>
                                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                                     <li>
-                                        <a href="#"
+                                        <a href="{{ route('product.index') }}"
                                             class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
                                     </li>
                                     <li>
@@ -165,26 +165,13 @@
                 <button id="dropdownDefault" data-dropdown-toggle="dropdown"
                     class="text-blue-500 text-sm px-4 py-2.5 text-center hidden md:inline-flex items-center font-bold"
                     type="button">Kategori<i class="bi bi-chevron-down ml-4 font-bold"></i></button>
-                <!-- Dropdown menu -->
+                <!-- Dropdown menu category-->
                 <div id="dropdown"
                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                         <li>
                             <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                                out</a>
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"></a>
                         </li>
                     </ul>
                 </div>
@@ -206,8 +193,8 @@
             </form>
             <div id="_btn_user_carts" class="order-1 md:order-3 flex">
                 @if (Auth::check())
-                <button class="hidden md:inline-flex"><img src="{{ asset('src/icon/store.png') }}"
-                        class="h-6 mx-3 sm:h-9" alt="Cart" /></button>
+                <a href="{{ route('marketplace.index') }}" class="hidden md:inline-flex" title="marketplace"><img
+                        src="{{ asset('src/icon/store.png') }}" class="h-6 mx-3 sm:h-9" alt="Cart" /></a>
                 <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
                     class="md:flex hidden mx-3 md:mx-10 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                     type="button">

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categories;
+use Illuminate\Support\Facades\DB;
+use App\Models\Products;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -13,7 +17,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('products.index',['title'=>'Products']);
+        $products =Products::all();
+        return view('products.index',['title'=>'Products'],compact('products'));
     }
 
     /**
@@ -23,7 +28,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $categories =Categories::all();
+        return view('products.create',['title'=>'Create new product'],compact('categories'));
     }
 
     /**
@@ -34,7 +40,34 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id'=>'required',
+            'name'=>'required',
+            'price'=>'required|numeric',
+            'count'=>'required|numeric',
+            'description'=>'required',
+            'cover'=>'required'
+        ]);
+        $cover ='cover'.time().'.'.$request->cover->extension();
+        $request->cover->move(public_path('src/cover'),$cover);
+        DB::beginTransaction();
+        try {
+            Products::create([
+                'category_id'=>$request->category_id,
+                'name'=>$request->name,
+                'price'=>$request->price,
+                'count'=>$request->count,
+                'description'=>$request->description,
+                'cover'=>'src/cover/'.$cover,
+                'user_id'=>Auth::id()
+            ]);
+            DB::commit();
+        } catch (\Throwable $th) {
+            //throw $th;
+            DB::rollBack();
+            
+        }
+        return back()->with('success','Product hasbeen successfuly');
     }
 
     /**

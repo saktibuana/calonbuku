@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Categories;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome',['title'=>'Calonbuku']);
+    $categories = Categories::all();
+    return view('welcome',['title'=>'Calonbuku'],compact('categories'));
 });
 
 Route::get('/dashboard', function () {
@@ -28,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('account',ProfileController::class);
     Route::resource('category',CategoryController::class);
     Route::resource('product',ProductsController::class);
+    Route::get('marketplace',[MarketplaceController::class,'index'])->name('marketplace.index');
 });
 
 require __DIR__.'/auth.php';
