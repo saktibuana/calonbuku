@@ -85,6 +85,7 @@ class ProfileController extends Controller
         $user->contact_number = $request->contact_number;
         $user->address=$request->address;
         $user->save();
+        return back();
     }
 
     /**

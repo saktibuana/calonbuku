@@ -38,6 +38,20 @@
                 Umur</label>
         </div>
         <div class="relative z-0 mb-6 w-full group grid grid-cols-2">
+            @if (Auth::user()->gender == 'male')
+            <div class="flex items-center">
+                <input checked id="default-radio-1" type="radio" value="male" name="gender"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-1"
+                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-laki</label>
+            </div>
+            <div class="flex items-center">
+                <input id="default-radio-2" type="radio" value="female" name="gender"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-2"
+                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
+            </div>
+            @elseif(Auth::user()->gender == 'female')
             <div class="flex items-center">
                 <input id="default-radio-1" type="radio" value="male" name="gender"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -50,6 +64,20 @@
                 <label for="default-radio-2"
                     class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
             </div>
+            @else
+            <div class="flex items-center">
+                <input id="default-radio-1" type="radio" value="male" name="gender"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-1"
+                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-laki</label>
+            </div>
+            <div class="flex items-center">
+                <input id="default-radio-2" type="radio" value="female" name="gender"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-2"
+                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
+            </div>
+            @endif
         </div>
         <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 mb-6 w-full group">

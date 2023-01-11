@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Categories;
+use App\Models\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,18 +22,20 @@ use App\Models\Categories;
 
 Route::get('/', function () {
     $categories = Categories::all();
-    return view('welcome',['title'=>'Calonbuku'],compact('categories'));
+    $products = Products::with('users')->get();
+    return view('welcome',['title'=>'Calonbuku'],compact('categories','products'));
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard',['title'=>'Dashboard']);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
     Route::resource('account',ProfileController::class);
     Route::resource('category',CategoryController::class);
     Route::resource('product',ProductsController::class);
     Route::get('marketplace',[MarketplaceController::class,'index'])->name('marketplace.index');
+    Route::get('cart',[CartController::class,'index'])->name('cart.index');
 });
 
 require __DIR__.'/auth.php';

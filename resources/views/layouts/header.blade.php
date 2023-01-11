@@ -249,8 +249,8 @@
                     type="button">Daftar
                 </a>
                 @endif
-                <button class="inline-flex"><img src="{{ asset('src/icon/shopping-cart.png') }}" class="h-6 mx-3 sm:h-9"
-                        alt="Cart" /></button>
+                <a href="{{ route('cart.index') }}" class="inline-flex"><img
+                        src="{{ asset('src/icon/shopping-cart.png') }}" class="h-6 mx-3 sm:h-9" alt="Cart" /></a>
             </div>
         </div>
     </nav>

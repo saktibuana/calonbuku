@@ -53,42 +53,14 @@
         <a href="#" class="text-xl text-blue-500 font-semibold">Lihat Semua</a>
     </div>
     <div id="_list_rekomendasi" class="py-6 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        @foreach ($products as $product)
         <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku1.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
+            <img src="{{ asset($product->cover) }}" alt="poto">
+            <p id="_author" class="text-xs">{{ $product->users->name }}</p>
+            <p id="_title" class="text-md">{{ $product->name }}</p>
+            <p id="_price" class="text-lg text-blue-500 font-bold">@currency($product->price)</p>
         </a>
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku2.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-        </a>
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku3.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-        </a>
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku4.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-        </a>
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku5.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-        </a>
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
-            <img src="{{ asset('src/dummy/buku6.jpg') }}" alt="poto">
-            <p id="_author" class="text-xs">Gege Akutami</p>
-            <p id="_title" class="text-md">Melangkah</p>
-            <p id="_price" class="text-lg text-blue-500 font-bold">Rp 93.000</p>
-        </a>
+        @endforeach
     </div>
 </div>
 <hr class="my-3">
