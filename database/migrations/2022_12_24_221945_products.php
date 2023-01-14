@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->text('cover');
             $table->string('name');
+            $table->string('slug');
             $table->decimal('price',15,0);
             $table->integer('count');
             $table->text('description');

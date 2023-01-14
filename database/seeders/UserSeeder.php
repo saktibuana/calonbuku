@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('tuangokil22;'),
             'role_id' => '1',
             'profile_foto'=>'src/profile/user.png',
+            'email_verified_at'=>now(),
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('tuangokil22;'),
             'role_id' => '1',
             'profile_foto'=>'src/profile/user.png',
+            'email_verified_at'=>now(),
             'created_at'=>now(),
             'updated_at'=>now()
         ]);

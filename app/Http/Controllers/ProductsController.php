@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Categories;
-use Illuminate\Support\Facades\DB;
 use App\Models\Products;
+use App\Models\Categories;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
@@ -55,6 +57,7 @@ class ProductsController extends Controller
             Products::create([
                 'category_id'=>$request->category_id,
                 'name'=>$request->name,
+                'slug'=>Str::slug($request->name),
                 'price'=>$request->price,
                 'count'=>$request->count,
                 'description'=>$request->description,
@@ -78,7 +81,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        return $id;
     }
 
     /**

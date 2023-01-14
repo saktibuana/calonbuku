@@ -22,7 +22,7 @@ use App\Models\Products;
 
 Route::get('/', function () {
     $categories = Categories::all();
-    $products = Products::with('users')->get();
+    $products = Products::with('users')->paginate(6);
     return view('welcome',['title'=>'Calonbuku'],compact('categories','products'));
 });
 
@@ -32,6 +32,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::resource('account',ProfileController::class);
+    Route::put('account/update_profile/{id}',[ProfileController::class,'update_profile'])->name('account.update_profile');
     Route::resource('category',CategoryController::class);
     Route::resource('product',ProductsController::class);
     Route::get('marketplace',[MarketplaceController::class,'index'])->name('marketplace.index');

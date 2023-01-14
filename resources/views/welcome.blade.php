@@ -54,7 +54,8 @@
     </div>
     <div id="_list_rekomendasi" class="py-6 px-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
         @foreach ($products as $product)
-        <a href="#" id="_card_rekomendasi" class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
+        <a href="{{ route('product.show',$product->slug) }}" id="_card_rekomendasi"
+            class=" bg-white px-5 pt-5 pb-12 rounded shadow-md">
             <img src="{{ asset($product->cover) }}" alt="poto">
             <p id="_author" class="text-xs">{{ $product->users->name }}</p>
             <p id="_title" class="text-md">{{ $product->name }}</p>
