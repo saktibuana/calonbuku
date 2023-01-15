@@ -37,6 +37,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::resource('product',ProductsController::class);
     Route::get('marketplace',[MarketplaceController::class,'index'])->name('marketplace.index');
     Route::get('cart',[CartController::class,'index'])->name('cart.index');
+    Route::post('cart/add_to_cart',[CartController::class,'add_to_cart'])->name('cart.store');
 });
 
 require __DIR__.'/auth.php';

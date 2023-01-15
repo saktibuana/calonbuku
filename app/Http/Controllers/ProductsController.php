@@ -81,7 +81,12 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        $detail =Products::with('users')->where('slug',$id)->get();
+        
+        return view('products.detail',[
+            'title'=>'detail'
+        ],
+        compact('detail'));
     }
 
     /**
