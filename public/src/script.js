@@ -10,4 +10,7 @@ $(document).ready(function () {
         $('#menu').addClass('hidden');
     });
     // end fungsi
+
+
+        
 });

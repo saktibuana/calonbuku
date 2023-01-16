@@ -196,10 +196,9 @@
                 <a href="{{ route('marketplace.index') }}" class="hidden md:inline-flex" title="marketplace"><img
                         src="{{ asset('src/icon/store.png') }}" class="h-6 mx-3 sm:h-9" alt="Cart" /></a>
                 <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
-                    class="md:flex hidden mx-3 md:mx-10 text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                    type="button">
+                    class="md:flex hidden mx-3 md:mx-6 rounded-full" type="button">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-8 h-8 rounded-full" src="{{ asset('src/profile/user.png') }}">
+                    <img class="w-10 h-10 rounded-full" src="{{ asset(Auth::user()->profile_foto) }}">
                 </button>
                 <!-- Dropdown menu -->
                 <div id="dropdownAvatar"

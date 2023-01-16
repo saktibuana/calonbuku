@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\DB;
 class CartController extends Controller
 {
     public function index(){
-        $cart = User::where('id',Auth::id())->with('cart')->withCount('cart')->get();
-        return $cart;
-        return view('cart.index',['title'=>'Cart']);
+        $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
+        // return $carts;
+        return view('cart.index',['title'=>'Cart'],compact('carts'));
     }
 
     public function add_to_cart(Request $request){
@@ -34,5 +34,34 @@ class CartController extends Controller
             DB::rollBack();
         }
         return back()->with('success','Product successfully added to cart, please check cart');
+    }
+
+    public function destroy($id){
+        Cart::destroy($id);
+        return back();
+    }
+
+    public function load_cart(){
+        $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
+        return view('cart.load',compact('carts'));
+    }
+
+    public function tambah_count_cart(Request $request){
+        $id = $request->id;
+        $cart =Cart::findOrFail($id);
+        $cart->count+=1;
+        $cart->save();
+        return response()->json('sukses');
+    }
+    public function kurang_count_cart(Request $request){
+        $id = $request->id;
+        $cart =Cart::findOrFail($id);
+        if($cart->count == 0){
+            return false;
+        }else{
+            $cart->count-=1;
+            $cart->save();
+        }
+        return response()->json('sukses');
     }
 }

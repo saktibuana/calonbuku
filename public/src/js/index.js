@@ -55,16 +55,15 @@ $(document).ready(function () {
                         timer: 1000,
                         timerProgressBar: true,
                         didOpen: (toast) => {
-                          toast.addEventListener('mouseenter', Swal.stopTimer)
-                          toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
                         }
-                      })
-                      
-                      Toast.fire({
+                        })
+                    Toast.fire({
                         icon: 'success',
                         title: response.success
-                      })
-                      location.reload()
+                    })
+                    location.reload()
                 }
             }, error: function(xhr, throwError) {
                 alert(xhr.status + "\n" + xhr.responseText + "\n" + throwError);
