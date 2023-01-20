@@ -11,6 +11,9 @@
             <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">Price</h3>
             <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">Total</h3>
         </div>
+        @php
+        $grandTotal=0;
+        @endphp
         @foreach ($carts[0]->cart as $cart)
         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
             <div class="flex w-2/5">
@@ -41,9 +44,14 @@
             <span class="text-center w-1/5 font-semibold text-sm">@currency($cart->products[0]->price)</span>
             <span class="text-center w-1/5 font-semibold text-sm">@currency($cart->products[0]->price *
                 $cart->count)</span>
+            @php
+            $total=$cart->products[0]->price *
+            $cart->count;
+            $grandTotal +=$total
+            @endphp
         </div>
         @endforeach
-        <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+        <a href="{{ url('/') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
             <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
                 <path
@@ -55,8 +63,8 @@
     <div id="summary" class="w-1/4 px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
-            <span class="font-semibold text-sm uppercase">Items 3</span>
-            <span class="font-semibold text-sm">590$</span>
+            <span class="font-semibold text-sm uppercase">Items {{ $carts[0]->cart_count }}</span>
+            <span class="font-semibold text-sm">@currency($grandTotal)</span>
         </div>
         <div>
             <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
@@ -74,8 +82,8 @@
                 <span>Total cost</span>
                 <span>$600</span>
             </div>
-            <button
-                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+            <a href="{{ route('checkout') }}"
+                class="bg-indigo-500 font-semibold inline-block text-center hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</a>
         </div>
     </div>
 </div>

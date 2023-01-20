@@ -56,12 +56,16 @@ class CartController extends Controller
     public function kurang_count_cart(Request $request){
         $id = $request->id;
         $cart =Cart::findOrFail($id);
-        if($cart->count == 0){
+        if($cart->count == 1){
             return false;
         }else{
             $cart->count-=1;
             $cart->save();
         }
         return response()->json('sukses');
+    }
+
+    public function checkout(){
+        return view('cart.checkout',['title'=>'Checkout']);
     }
 }
