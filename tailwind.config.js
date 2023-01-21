@@ -13,6 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                PassionOne:['cursive',...defaultTheme.fontFamily.sans]
             },
             colors:{
                 abu_muda:'#f9fbfe',
