@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <!-- Styles -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite(['resources/css/app.css','resources/js/app.js'])
@@ -134,15 +136,15 @@
     </footer>
     {{-- file Javascript --}}
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     {{-- Script --}}
     <script src="{{ asset('src/js/index.js') }}"></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
     <!-- Initialize Swiper -->
+
     <script>
         var swiper = new Swiper(".mySwiper", {
             spaceBetween: 30,
