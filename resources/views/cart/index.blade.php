@@ -9,32 +9,6 @@
     $(document).ready(function () {
         $('#load').load('load_cart')
     });
-    // let tambah = document.querySelectorAll('.plus');
-    // let kurang = document.querySelectorAll('.minus');
-
-    // tambah.forEach(btn => {
-    //     btn.addEventListener('click', function (event) {
-    //         var btnTambahClicked = event.target;
-    //         var input = btnTambahClicked.previousElementSibling;
-    //         var inputValue = input.value;
-    //         var newValue = parseInt(inputValue) + 1;
-    //         input.value = newValue;
-    //     })
-    // });
-
-    // kurang.forEach(btn => {
-    //     btn.addEventListener('click', function (event) {
-    //         var btnKurangClicked = event.target;
-    //         var input = btnKurangClicked.nextElementSibling;
-    //         var inputValue = input.value;
-    //         var newValue = parseInt(inputValue) - 1;
-    //         if (inputValue == 0) {
-    //             return false;
-    //         } else {
-    //             input.value = newValue;
-    //         }
-    //     })
-    // });
 
 </script>
 @endsection
