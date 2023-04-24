@@ -8,7 +8,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Categories;
 use App\Models\Products;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ use App\Models\Products;
 Route::get('/', function () {
     $categories = Categories::all();
     $products = Products::with('users')->paginate(6);
-    return view('welcome',['title'=>'Calonbuku'],compact('categories','products'));
+    return view('welcome',['title'=>'Calonbuku'],compact('categories','products',));
 });
 
 Route::get('/dashboard', function () {

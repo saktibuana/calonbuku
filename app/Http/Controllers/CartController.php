@@ -12,7 +12,10 @@ class CartController extends Controller
 {
     public function index(Request $request){
         $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
-        
+        // return $carts;
+        if($carts[0]->cart_count === 0){
+            return redirect()->back()->with('error','Tidak ada barang');
+        }
         return view('cart.index',['title'=>'Cart'],compact('carts'));
     }
 
@@ -39,6 +42,10 @@ class CartController extends Controller
 
     public function destroy($id){
         Cart::destroy($id);
+        $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
+        if($carts[0]->cart_count === 0){
+            return redirect('/');
+        }
         return back();
     }
 

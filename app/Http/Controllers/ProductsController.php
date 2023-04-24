@@ -19,7 +19,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products =Products::where('user_id',Auth::id())->get();
+        $products =Products::with('category')->where('user_id',Auth::id())->get();
         return view('products.index',['title'=>'Products'],compact('products'));
     }
 

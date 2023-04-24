@@ -20,6 +20,9 @@
                         Product
                     </th>
                     <th scope="col" class="py-3 px-6">
+                        Category
+                    </th>
+                    <th scope="col" class="py-3 px-6">
                         Qty
                     </th>
                     <th scope="col" class="py-3 px-6">
@@ -33,20 +36,24 @@
             <tbody>
                 @foreach ($products as $product)
                 <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-600">
                     <td class="p-4 w-32">
                         <img src="{{ $product->cover }}" alt="{{ $product->name }}">
                     </td>
                     <td class="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                         {{ $product->name }}
                     </td>
+                    <td class="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                        {{ $product->category->name }}
+                    </td>
                     <td class="py-4 px-6">
                         {{ $product->count }}
                     </td>
                     <td class="py-4 px-6 font-semibold text-gray-900 dark:text-white">
-                        {{ $product->price }}
+                        {{ number_format($product->price,0,',','.') }}
                     </td>
-                    <td class="py-4 px-6">
+                    <td class="py-4 px-6 flex flex-col items-center justify-center">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                     </td>
                 </tr>
