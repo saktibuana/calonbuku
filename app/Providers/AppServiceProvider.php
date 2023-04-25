@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
             $user = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
-            $view->with('validCart', $user[0]->cart_count); // Mengirim data user ke semua view
+            $view->with('validCart', $user); // Mengirim data user ke semua view
         });
     }
 }

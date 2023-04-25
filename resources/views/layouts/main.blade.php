@@ -20,7 +20,7 @@
 <body class="bg-abu_muda">
     @include('layouts.header')
     <div id="_main" class="_main w-full lg:w-[1140px] mx-auto">
-        @if ($validCart === 0)
+        @if ($validCart[0]->cart_count===0)
         <div id="alert-additional-content-4"
             class="p-4 mb-4 text-yellow-800 border border-yellow-300  bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
             role="alert">

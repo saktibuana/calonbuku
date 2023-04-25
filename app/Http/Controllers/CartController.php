@@ -13,12 +13,9 @@ class CartController extends Controller
     public function index(){
         $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
         // return $carts;
-<<<<<<< HEAD
         if($carts[0]->cart_count === 0){
             return redirect()->back()->with('error','Tidak ada barang');
         }
-=======
->>>>>>> parent of 1013c20 (proses pembuatan checkout)
         return view('cart.index',['title'=>'Cart'],compact('carts'));
     }
 
