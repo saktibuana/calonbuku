@@ -7,15 +7,18 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+
 class CartController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
         // return $carts;
+<<<<<<< HEAD
         if($carts[0]->cart_count === 0){
             return redirect()->back()->with('error','Tidak ada barang');
         }
+=======
+>>>>>>> parent of 1013c20 (proses pembuatan checkout)
         return view('cart.index',['title'=>'Cart'],compact('carts'));
     }
 
@@ -36,7 +39,6 @@ class CartController extends Controller
             //throw $th;
             DB::rollBack();
         }
-    
         return back()->with('success','Product successfully added to cart, please check cart');
     }
 
@@ -49,22 +51,8 @@ class CartController extends Controller
         return back();
     }
 
-    public function load_cart(Request $request){
+    public function load_cart(){
         $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
-        
-        $product = [];
-        foreach($carts[0]->cart as $cart){
-            $product[]=[
-                'id_cart'=>$cart->id,
-                'qty'=>$cart->count,
-                'price'=>$cart->products[0]->price,
-                'title'=>$cart->products[0]->name,
-                'penulis'=>$cart->products[0]->users->name,
-                'cover'=>$cart->products[0]->cover,
-            ];
-        }
-        // return $product;
-        $request->session()->put('cart', $product);
         return view('cart.load',compact('carts'));
     }
 
@@ -87,12 +75,7 @@ class CartController extends Controller
         return response()->json('sukses');
     }
 
-    public function checkout(Request $request){
+    public function checkout(){
         return view('cart.checkout',['title'=>'Checkout']);
-    }
-
-    public function load_checkout(Request $request){
-        $data =Session::get('cart');
-        return view('cart.load_checkout',compact('data'));
     }
 }

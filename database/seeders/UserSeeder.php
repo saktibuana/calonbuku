@@ -41,25 +41,5 @@ class UserSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
-        DB::table('users')->insert([
-            'name' => "user satu",
-            'email' => "user1@gmail.com",
-            'password' => bcrypt('tuangokil22;'),
-            'role_id' => '1',
-            'profile_foto'=>'src/profile/user2.png',
-            'email_verified_at'=>now(),
-            'created_at'=>now(),
-            'updated_at'=>now()
-        ]);
-        DB::table('users')->insert([
-            'name' => "user dua",
-            'email' => "user2@gmail.com",
-            'password' => bcrypt('tuangokil22;'),
-            'role_id' => '1',
-            'profile_foto'=>'src/profile/user5.png',
-            'email_verified_at'=>now(),
-            'created_at'=>now(),
-            'updated_at'=>now()
-        ]);
     }
 }
