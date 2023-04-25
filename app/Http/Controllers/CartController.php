@@ -14,7 +14,7 @@ class CartController extends Controller
         $carts = User::where('id',Auth::id())->with(['cart','cart.products','cart.products.users'])->withCount('cart')->get();
         // return $carts;
         if($carts[0]->cart_count === 0){
-            return redirect()->back()->with('error','Tidak ada barang');
+            return redirect()->back()->withErrors('Tidak ada barang');
         }
         return view('cart.index',['title'=>'Cart'],compact('carts'));
     }

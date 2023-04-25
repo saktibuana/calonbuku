@@ -30,7 +30,7 @@
             <h1 class="text-xl text-gray-900 font-semibold my-5">Delivery Method</h1>
             <div class="grid grid-cols-2 gap-5 mb-5">
                 <div onclick="delivery('halooo')"
-                    class="outline card-delivery cursor-pointer hover:outline-3 outline-gray-400 hover:outline-indigo-500 rounded-lg p-3">
+                    class="outline outline-2 card-delivery cursor-pointer hover:outline-3 outline-gray-400 hover:outline-indigo-500 rounded-lg p-3">
                     <div class="flex justify-between">
                         <h2 class="text-gray-900 font-semibold">Standard</h2>
                         <i class="fa-solid fa-circle-check"></i>
@@ -38,8 +38,8 @@
                     <h4 class="text-gray-400 mb-3">4-5 bussines day</h4>
                     <h2 class="text-gray-900 font-semibold">Rp 8.000</h2>
                 </div>
-                <div
-                    class="outline outline-1 card-delivery cursor-pointer hover:outline-3 outline-gray-400 hover:outline-indigo-500 rounded-lg p-3">
+                <div onclick="delivery('tes')"
+                    class="outline outline-2 card-delivery cursor-pointer hover:outline-3 outline-gray-400 hover:outline-indigo-500 rounded-lg p-3">
                     <div class="flex justify-between">
                         <h2 class="text-gray-900 font-semibold">Express</h2>
                         <i class="fa-solid fa-circle-check"></i>
@@ -114,8 +114,11 @@
     function delivery(param) {
         let el = document.querySelector('.card-delivery');
         let cek = el.firstElementChild.lastElementChild
+        $('.card-delivery').addClass('text-indigo-500');
+        $('.card-delivery').removeClass('text-gray-400');
+        cek.classList.remove('text-indigo-500')
         cek.classList.add('text-indigo-500')
-        console.log(cek)
+        console.log(el)
     }
 
 </script>

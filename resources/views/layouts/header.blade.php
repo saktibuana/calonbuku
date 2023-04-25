@@ -161,6 +161,8 @@
                     </div>
                 </aside>
             </div>
+
+            {{-- Button Kategori --}}
             <form id="_form_search" class="flex items-center order-4 md:order-2 w-full md:w-1/2 my-3">
                 <button id="dropdownDefault" data-dropdown-toggle="dropdown"
                     class="text-blue-500 text-sm px-4 py-2.5 text-center hidden md:inline-flex items-center font-bold"
@@ -169,17 +171,16 @@
                 <div id="dropdown"
                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                        {{-- @forelse ($category as $item)
+                        @forelse ($category as $item)
                         <li>
                             <a href="#"
                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ $item->name }}</a>
                         </li>
                         @empty
 
-                        @endforelse --}}
+                        @endforelse
                     </ul>
                 </div>
-
                 <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">
                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -195,18 +196,25 @@
                         placeholder="Cari buku" required>
                 </div>
             </form>
+            {{-- End Kategori --}}
+
             <div id="_btn_user_carts" class="order-1 md:order-3 flex">
                 @if (Auth::check())
-                <a href="{{ route('marketplace.index') }}" class="hidden md:inline-flex" title="marketplace"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+
+                {{-- Button Marketplace --}}
+                <a href="{{ route('marketplace.index') }}" class="hidden md:inline-flex w-8" title="marketplace"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         class="bi bi-shop text-blue-500 hover:text-blue-600" viewBox="0 0 16 16">
                         <path
                             d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
                     </svg></a>
+                {{-- End Button Marketplace --}}
+
+                {{-- Button Profile --}}
                 <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
                     class="md:flex hidden mx-3 md:mx-6 rounded-full" type="button">
                     <span class="sr-only">Open user menu</span>
-                    <img class="w-10 h-10 rounded-full" src="{{ asset(Auth::user()->profile_foto) }}">
+                    <img class="w-8 h-8 rounded-full" src="{{ asset(Auth::user()->profile_foto) }}">
                 </button>
                 <!-- Dropdown menu -->
                 <div id="dropdownAvatar"
@@ -256,12 +264,16 @@
                     type="button">Daftar
                 </a>
                 @endif
-                <a href="{{ route('cart.index') }}" class="inline-flex"><svg xmlns="http://www.w3.org/2000/svg"
-                        width="36" height="36" fill="currentColor"
-                        class="bi bi-basket-fill text-blue-500 hover:text-blue-600" viewBox="0 0 16 16">
+                {{-- End Button Profile --}}
+
+                {{-- Button cart --}}
+                <a href="{{ route('cart.index') }}" class="inline-flex w-8"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" class="bi bi-basket-fill text-blue-500 hover:text-blue-600"
+                        viewBox="0 0 16 16">
                         <path
                             d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z" />
                     </svg></a>
+                {{-- End Button cart --}}
             </div>
         </div>
     </nav>

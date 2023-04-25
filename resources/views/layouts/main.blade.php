@@ -20,8 +20,8 @@
 <body class="bg-abu_muda">
     @include('layouts.header')
     <div id="_main" class="_main w-full lg:w-[1140px] mx-auto">
-        @if ($validCart[0]->cart_count===0)
-        <div id="alert-additional-content-4"
+        @if ($errors->any())
+        <div id="validcart-modal"
             class="p-4 mb-4 text-yellow-800 border border-yellow-300  bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
             role="alert">
             <div class="flex items-center">
@@ -51,7 +51,7 @@
                 </button>
                 <button type="button"
                     class="text-yellow-800 bg-transparent border border-yellow-800 hover:bg-yellow-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-yellow-300 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-gray-800 dark:focus:ring-yellow-800"
-                    data-dismiss-target="#alert-additional-content-4" aria-label="Close">
+                    aria-label="Close" id="dismiss-validcart">
                     Dismiss
                 </button>
             </div>
@@ -175,6 +175,7 @@
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     {{-- Script --}}
     <script src="{{ asset('src/js/index.js') }}"></script>
+    <script src="{{ asset('script.js') }}"></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -197,6 +198,11 @@
                 prevEl: ".swiper-button-prev",
             },
         });
+
+        // const btnValidcart = document.getElementById('dismiss-validcart');
+        // btnValidcart.addEventListener('click', function () {
+        //     console.log('alet')
+        // })
 
     </script>
 

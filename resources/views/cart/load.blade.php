@@ -66,12 +66,6 @@
             <span class="font-semibold text-sm uppercase">Items {{ $carts[0]->cart_count }}</span>
             <span class="font-semibold text-sm">@currency($grandTotal)</span>
         </div>
-        <div>
-            <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
-            <select class="block p-2 text-gray-600 w-full text-sm">
-                <option>Standard shipping - $10.00</option>
-            </select>
-        </div>
         <div class="py-10">
             <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
             <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
