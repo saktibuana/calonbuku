@@ -51,35 +51,41 @@
             @endphp
         </div>
         @endforeach
-        <a href="{{ url('/') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
+        <div class="flex justify-between">
+            <a href="{{ url('/') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
-            <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
-                <path
-                    d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
-            </svg>
-            Continue Shopping
-        </a>
+                <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                    <path
+                        d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+                </svg>
+                Continue Shopping
+            </a>
+            <a href="{{ route('checkout') }}" class="flex font-semibold text-indigo-600 text-sm mt-10">
+                Continue Checkout
+                <svg class="fill-current ml-2 text-indigo-600 w-4" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+                </svg>
+            </a>
+        </div>
     </div>
-    <div id="summary" class="w-1/4 px-8 py-10">
+    {{-- <div id="summary" class="w-1/4 px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
             <span class="font-semibold text-sm uppercase">Items {{ $carts[0]->cart_count }}</span>
-            <span class="font-semibold text-sm">@currency($grandTotal)</span>
-        </div>
-        <div class="py-10">
-            <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-            <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
-        </div>
-        <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
-        <div class="border-t mt-8">
-            <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-                <span>Total cost</span>
-                <span>$600</span>
-            </div>
-            <a href="{{ route('checkout') }}"
-                class="bg-indigo-500 font-semibold inline-block text-center hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</a>
-        </div>
+    <span class="font-semibold text-sm">@currency($grandTotal)</span>
+</div>
+<div class="border-t mt-8">
+    <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+        <span>Total cost</span>
+        <span>$600</span>
     </div>
+    <a href="{{ route('checkout') }}"
+        class="bg-indigo-500 font-semibold inline-block text-center hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</a>
+</div>
+</div> --}}
 </div>
 <script script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
