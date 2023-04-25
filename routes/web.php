@@ -44,6 +44,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('tambah_count_cart',[CartController::class,'tambah_count_cart'])->name('tambah_count_cart');
     Route::post('kurang_count_cart',[CartController::class,'kurang_count_cart'])->name('kurang_count_cart');
     Route::get('checkout',[CartController::class,'checkout'])->name('checkout');
+    Route::get('load_checkout',[CartController::class,'load_checkout'])->name('load_checkout');
 });
 
 require __DIR__.'/auth.php';
