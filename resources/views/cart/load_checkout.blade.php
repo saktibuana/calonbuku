@@ -115,7 +115,7 @@
         <div class="text-end">
             <input type="text"
                 class="font-nunitoSans outline-none focus:outline-none bg-transparent border-none text-end rp"
-                id="subtotal" value="{{ $subtotal }}" readonly>
+                id="subtotal" value="@currency($subtotal)" readonly>
             <input type="text"
                 class="font-nunitoSans outline-none focus:outline-none bg-transparent border-none text-end rp"
                 id="delivery" value="0" readonly>
@@ -141,22 +141,28 @@
             class="text-indigo-600 bg-white hover:bg-indigo-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-indigo-300 font-bold w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Bayar</button>
     </div>
 </div>
-<script src="{{ asset('src/autoNumeric.js') }}"></script>
+
 <script>
     $(document).ready(function () {
+        // $('#taxes').autoNumeric('init');
         let token = $("meta[name='csrf-token']").attr("content");
         const subtotal = $('#subtotal').val();
-        const taxes = (subtotal * 10) / 100
-        $('#taxes').val(taxes)
+        const parsingSubtotal = parseInt(subtotal.replace(/[^0-9]/g, ''));
+        const taxes = (parsingSubtotal * 10) / 100
+        const parsingTaxes = taxes.toLocaleString('id-ID');
+        $('#taxes').val(parsingTaxes)
         grandTotal()
     });
 
     function grandTotal() {
-        const subtotal = parseInt($('#subtotal').val());
-        const delivery = parseInt($('#delivery').val());
-        const taxes = parseInt($('#taxes').val());
-        const grandTotal = subtotal + delivery + taxes
-        $('#grandTotal').text(grandTotal)
+        const subtotal = $('#subtotal').val();
+        const parsingSubtotal = parseInt(subtotal.replace(/[^0-9]/g, ''));
+        const delivery = parseInt($('#delivery').val().replace(/[^0-9]/g, ''));
+        const taxes = $('#taxes').val();
+        const parsingTaxes = parseInt(taxes.replace(/\./g, ''))
+        const grandTotal = parsingSubtotal + delivery + parsingTaxes
+        const parsingGrandTotal = grandTotal.toLocaleString("id-ID");
+        $('#grandTotal').text(parsingGrandTotal)
     }
 
     function delivery(ceklis, label, harga) {
@@ -164,7 +170,8 @@
         $('.delivery-cek').addClass('hidden')
         $(`${ceklis}`).removeClass('hidden')
         $(`${label}`).addClass('outline-2 outline-indigo-500 bg-indigo-100/70')
-        $("#delivery").val(`${harga}`);
+        const hargabaru = harga;
+        $("#delivery").val(hargabaru.toLocaleString('id-ID'));
         grandTotal()
     }
 
