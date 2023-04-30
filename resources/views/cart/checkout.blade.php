@@ -1,8 +1,7 @@
 @extends('layouts.main')
 @section('main')
 
-<div id="load_checkout"
-    class="lg:container lg:mx-auto grid grid-cols-1 my-10 lg:grid-cols-2 outline outline-1 outline-slate-200">
+<div id="load_checkout">
 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
